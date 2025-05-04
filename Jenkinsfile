@@ -16,11 +16,6 @@ stages {
         }
     }
 
-  
-    stages {
-        // ... (Build Docker Image stage)
-
-        // Stage 2: Push Docker Image to ECR
         stage('Push to ECR') {
             steps {
                 // Use the withCredentials block to access the stored AWS credentials
@@ -70,6 +65,7 @@ stages {
                 }
             }
         }
-    }
+}
+    
 
 
