@@ -1,4 +1,5 @@
 // Define the agent where the pipeline will run
+pipeline {
 agent any
 
 // Define environment variables
@@ -91,3 +92,4 @@ stages {
 //         cleanWs()
 //     }
 // }
+}
