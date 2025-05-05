@@ -33,7 +33,7 @@ stages {
             // Use the withCredentials block to access the stored AWS credentials
             // Replace 'aws-ecr-terraform' with the ID you gave your credentials in Jenkins
             // FIX: Corrected the syntax of credentialsId
-            withCredentials([aws(credentialsId: 'aws-ecr-terraform', variablePrefix: 'AWS')]) {
+            withCredentials([aws(credentialsId: 'aws-ecr-terraform)', variablePrefix: 'AWS')]) {
                 script {
                     // Authenticate Docker with ECR using the credentials exposed as environment variables
                     // The 'variablePrefix: 'AWS'' makes the credentials available as AWS_ACCESS_KEY_ID and AWS_SECRET_ACCESS_KEY
@@ -57,7 +57,7 @@ stages {
         steps {
             // You would also wrap the terraform steps in a withCredentials block
             // FIX: Corrected the syntax of credentialsId
-            withCredentials([aws(credentialsId: 'aws-ecr-terraform', variablePrefix: 'AWS')]) {
+            withCredentials([aws(credentialsId: 'aws-ecr-terraform)', variablePrefix: 'AWS')]) {
                 script {
                     // Navigate to the directory containing your Terraform code
                     // Replace 'terraform' with the actual path to your Terraform files if they are in a subdirectory
